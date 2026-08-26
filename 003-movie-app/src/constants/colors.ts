@@ -1,0 +1,16 @@
+export const colors = {
+  background: "#000000",
+  surface: "#1C1922",
+  surfaceAlt: "#211E28",
+  card: "#231F2B",
+  primary: "#E31E24",
+  primaryDark: "#B5171C",
+  text: "#FFFFFF",
+  textSecondary: "#A8A3B0",
+  textMuted: "#6F6A78",
+  border: "#2C2833",
+  iconInactive: "#8A8591",
+  overlay: "rgba(0,0,0,0.35)",
+  badgeBackground: "rgba(0,0,0,0.55)",
+  dotInactive: "#4A4652",
+};
