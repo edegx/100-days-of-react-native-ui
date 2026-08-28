@@ -32,7 +32,7 @@ export default function HomeScreen() {
         ))}
 
         <ServicesGrid
-        // onPressItem={(id) => id === "loan" && router.push("/(tabs)/loan")}
+          onPressItem={(id) => id === "loan" && router.push("/(tabs)/loan")}
         />
 
         <PromoSlider
@@ -40,9 +40,9 @@ export default function HomeScreen() {
         />
 
         <PromoCardsRow
-        // onPressCard={(id) =>
-        //   id === "cashbox" && router.push("/(tabs)/wealth")
-        // }
+          onPressCard={(id) =>
+            id === "cashbox" && router.push("/(tabs)/wealth")
+          }
         />
       </ScrollView>
     </Screen>
