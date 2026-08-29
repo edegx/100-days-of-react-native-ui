@@ -12,11 +12,17 @@ interface SpendingData {
 }
 
 const spendingByPeriod: Record<Period, SpendingData> = {
-  week: { moneyIn: "₦75,000.00", moneyOut: "₦175,900.50" },
-  month: { moneyIn: "₦312,450.00", moneyOut: "₦540,120.75" },
+  week: { moneyIn: "₦759,000.00", moneyOut: "₦75,900.50" },
+  month: { moneyIn: "₦3,112,450.00", moneyOut: "₦540,120.75" },
 };
 
-export default function SpendingTrends() {
+interface SpendingTrendsProps {
+  isBalanceVisible: boolean;
+}
+
+export default function SpendingTrends({
+  isBalanceVisible,
+}: SpendingTrendsProps) {
   const [period, setPeriod] = useState<Period>("week");
   const data = spendingByPeriod[period];
 
@@ -35,12 +41,13 @@ export default function SpendingTrends() {
             <Text
               style={[
                 styles.toggleText,
-                period === "week" && styles.toggleTextActive,
+                period === "week" && styles.toggleButtonActive,
               ]}
             >
               Week
             </Text>
           </Pressable>
+
           <Pressable
             style={[
               styles.toggleButton,
@@ -51,7 +58,7 @@ export default function SpendingTrends() {
             <Text
               style={[
                 styles.toggleText,
-                period === "month" && styles.toggleTextActive,
+                period === "month" && styles.toggleButtonActive,
               ]}
             >
               Month
@@ -67,8 +74,11 @@ export default function SpendingTrends() {
               </View>
               <Text style={styles.moneyInLabel}>Money in</Text>
             </View>
-            <Text style={styles.summaryAmount}>{data.moneyIn}</Text>
+            <Text style={styles.summaryAmount}>
+              {isBalanceVisible ? data.moneyIn : "••••"}
+            </Text>
           </View>
+
           <View style={[styles.summaryItem, styles.summaryItemRight]}>
             <View style={styles.summaryLabelRow}>
               <View style={[styles.iconCircle, styles.outCircle]}>
@@ -76,7 +86,9 @@ export default function SpendingTrends() {
               </View>
               <Text style={styles.moneyOutLabel}>Money out</Text>
             </View>
-            <Text style={styles.summaryAmount}>{data.moneyOut}</Text>
+            <Text style={styles.summaryAmount}>
+              {isBalanceVisible ? data.moneyOut : "••••"}
+            </Text>
           </View>
         </View>
       </View>

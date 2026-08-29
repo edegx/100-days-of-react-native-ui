@@ -31,8 +31,8 @@ export default function BalanceCard({
       <View style={styles.card}>
         <View style={styles.accountRow}>
           <Text style={styles.accountText}>
-            {accountNumber} <Text style={styles.separator}>|</Text>{" "}
-            {accountName}
+            {accountNumber}
+            <Text style={styles.separator}> |</Text> {accountName}
           </Text>
           <Pressable onPress={onCopyPress} hitSlop={8} style={styles.copyIcon}>
             <Ionicons
@@ -61,7 +61,6 @@ export default function BalanceCard({
             />
           </Pressable>
         </View>
-
         <Text style={styles.lastUpdated}>{lastUpdated}</Text>
 
         <View style={styles.actionsRow}>
@@ -69,7 +68,7 @@ export default function BalanceCard({
             <Ionicons name="add" size={16} color={colors.textPrimary} />
             <Text style={styles.actionText}>Add Money</Text>
           </Pressable>
-          <Pressable style={styles.actionButton} onPress={onHistoryPress}>
+          <Pressable style={styles.actionButton} onPress={onAddMoneyPress}>
             <Ionicons
               name="time-outline"
               size={16}

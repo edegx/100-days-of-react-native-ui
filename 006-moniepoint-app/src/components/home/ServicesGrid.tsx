@@ -32,7 +32,7 @@ export default function ServicesGrid({
 }
 
 const styles = StyleSheet.create({
-  container: { 
+  container: {
     paddingHorizontal: spacing.lg,
     marginTop: spacing.xxl,
     marginBottom: -30,

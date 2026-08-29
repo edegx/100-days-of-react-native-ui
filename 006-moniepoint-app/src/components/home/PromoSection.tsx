@@ -1,8 +1,7 @@
-import React from 'react';
-import { View, Text, StyleSheet, Pressable } from 'react-native';
-import { Ionicons } from '@expo/vector-icons';
-import { colors } from '@/constants/colors';
-import { spacing, radius } from '@/constants/spacing';
+import { colors } from "@/constants/colors";
+import { radius, spacing } from "@/constants/spacing";
+import { Ionicons } from "@expo/vector-icons";
+import { Pressable, StyleSheet, Text, View } from "react-native";
 
 interface PromoSectionProps {
   sectionTitle: string;
@@ -30,6 +29,7 @@ export default function PromoSection({
             <Text style={styles.cta}>{ctaLabel}</Text>
           </Pressable>
         </View>
+
         <View style={styles.imagePlaceholder}>
           <Ionicons name="image-outline" size={22} color={colors.textMuted} />
         </View>
@@ -46,15 +46,15 @@ const styles = StyleSheet.create({
   sectionTitle: {
     color: colors.textSecondary,
     fontSize: 15,
-    fontWeight: '700',
+    fontWeight: "700",
     marginBottom: spacing.lg,
   },
   card: {
-    flexDirection: 'row',
+    flexDirection: "row",
     backgroundColor: colors.promoBackground,
     borderRadius: radius.lg,
     padding: spacing.xl,
-    justifyContent: 'space-between',
+    justifyContent: "space-between",
   },
   textColumn: {
     flex: 1,
@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
   heading: {
     color: colors.textPrimary,
     fontSize: 17,
-    fontWeight: '700',
+    fontWeight: "700",
     marginBottom: spacing.md,
   },
   description: {
@@ -75,14 +75,14 @@ const styles = StyleSheet.create({
   cta: {
     color: colors.accentYellow,
     fontSize: 15,
-    fontWeight: '700',
+    fontWeight: "700",
   },
   imagePlaceholder: {
     width: 48,
     height: 48,
     borderRadius: radius.sm,
     backgroundColor: colors.serviceTile,
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: "center",
+    justifyContent: "center",
   },
 });

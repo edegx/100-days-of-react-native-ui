@@ -1,7 +1,7 @@
-import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
-import { colors } from '@/constants/colors';
-import { spacing } from '@/constants/spacing';
+import { colors } from "@/constants/colors";
+import { spacing } from "@/constants/spacing";
+import React from "react";
+import { StyleSheet, Text, View } from "react-native";
 
 interface TitledSectionProps {
   title: string;
@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
   sectionTitle: {
     color: colors.textSecondary,
     fontSize: 15,
-    fontWeight: '700',
+    fontWeight: "700",
     marginBottom: spacing.lg,
   },
 });

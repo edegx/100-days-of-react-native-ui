@@ -34,7 +34,7 @@ export default function InfoCard({
           <Text style={styles.description}>
             {descriptionPrefix}
             {highlightedText ? (
-              <Text style={styles.highlight}>{highlightedText}</Text>
+              <Text style={styles.highlight}>{highlightedText} </Text>
             ) : null}
           </Text>
         )}

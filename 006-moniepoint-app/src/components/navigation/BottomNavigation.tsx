@@ -1,20 +1,20 @@
-import React, { useState } from 'react';
-import { View, StyleSheet } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
-import NavigationItem from './NavigationItem';
-import { navItems } from '@/data/navigation';
-import { colors } from '@/constants/colors';
-import type { NavItemData } from '@/types';
+import { colors } from "@/constants/colors";
+import { navItems } from "@/data/navigation";
+import type { NavItemData } from "@/types";
+import { useState } from "react";
+import { StyleSheet, View } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
+import NavigationItem from "./NavigationItem";
 
 export default function BottomNavigation() {
-  const [activeId, setActiveId] = useState('home');
+  const [activeId, setActiveId] = useState("home");
 
   const handlePress = (item: NavItemData) => {
     setActiveId(item.id);
   };
 
   return (
-    <SafeAreaView edges={['bottom']} style={styles.safeArea}>
+    <SafeAreaView edges={["bottom"]} style={styles.safeArea}>
       <View style={styles.container}>
         {navItems.map((item) => (
           <NavigationItem
@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
     borderTopColor: colors.divider,
   },
   container: {
-    flexDirection: 'row',
+    flexDirection: "row",
     paddingTop: 10,
     paddingBottom: 6,
   },

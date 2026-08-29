@@ -36,7 +36,7 @@ export default function RewardsSection({
 }
 
 const styles = StyleSheet.create({
-  container: { 
+  container: {
     paddingHorizontal: spacing.lg,
   },
   sectionTitle: {

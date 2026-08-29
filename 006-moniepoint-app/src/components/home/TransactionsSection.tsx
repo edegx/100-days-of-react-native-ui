@@ -19,7 +19,7 @@ export default function TransactionsSection({
   return (
     <View style={styles.container}>
       <View style={styles.headerRow}>
-        <Text style={styles.sectionTitle}>Recent transactions</Text>
+        <Text style={styles.sectionTitle}>Recent Transactions</Text>
         <Pressable onPress={onViewAllPress}>
           <Text style={styles.viewAll}>View All</Text>
         </Pressable>

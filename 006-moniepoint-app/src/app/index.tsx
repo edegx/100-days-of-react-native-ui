@@ -25,10 +25,6 @@ export default function Index() {
         contentContainerStyle={styles.scrollContent}
         showsVerticalScrollIndicator={false}
       >
-        {/* <KycBanner /> */}
-
-        {/* <PaginationDots count={2} activeIndex={0} /> */}
-
         <BalanceCard
           accountNumber="0123456789"
           accountName="Byteverse Technology"
@@ -60,17 +56,16 @@ export default function Index() {
             highlightedText="up to 20.0% interest per annum"
           />
         </TitledSection>
-
         <TitledSection title="Marketers toolkit">
           <InfoCard
             emoji="💳"
             iconBackground="#224683"
             title="Become a card sales agent"
-            boldText="Earn sales commissions for every card sold"
+            boldText="Earn sales commisions for every card sold"
           />
         </TitledSection>
 
-        <SpendingTrends />
+        <SpendingTrends isBalanceVisible={isBalanceVisible} />
       </ScrollView>
 
       <BottomNavigation />
