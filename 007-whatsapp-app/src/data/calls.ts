@@ -1,0 +1,71 @@
+import { CallItem } from '@/types';
+
+export const calls: CallItem[] = [
+  {
+    id: '1',
+    name: 'Founders Group',
+    avatar: { initials: 'FG', color: '#F2994A' },
+    date: '22/08/2026',
+    type: 'missed',
+    count: 2,
+  },
+  {
+    id: '2',
+    name: 'Founders Group',
+    avatar: { initials: 'FG', color: '#F2994A' },
+    date: '21/08/2026',
+    type: 'missed',
+    count: 2,
+  },
+  {
+    id: '3',
+    name: 'Lavida - 100k',
+    avatar: { initials: 'L', color: '#2F80ED' },
+    date: '19/08/2026',
+    type: 'missed',
+  },
+  {
+    id: '4',
+    name: '69Cloud',
+    avatar: { initials: '69', color: '#27AE60' },
+    date: '08/12/2023',
+    type: 'missed',
+  },
+  {
+    id: '5',
+    name: 'Vowmailer',
+    avatar: { initials: 'VM', color: '#2F80ED' },
+    date: '08/12/2023',
+    type: 'missed',
+    count: 2,
+  },
+  {
+    id: '6',
+    name: 'Vowmailer',
+    avatar: { initials: 'VM', color: '#2F80ED' },
+    date: '07/12/2023',
+    type: 'missed',
+  },
+  {
+    id: '7',
+    name: 'Youkay Design',
+    avatar: { initials: 'YD', color: '#9B51E0' },
+    date: '07/12/2023',
+    type: 'outgoing',
+  },
+  {
+    id: '8',
+    name: 'Timothy',
+    avatar: { initials: 'T', color: '#3D3D40' },
+    date: '07/12/2023',
+    type: 'missed',
+  },
+  {
+    id: '9',
+    name: 'Vowmailer',
+    avatar: { initials: 'VM', color: '#2F80ED' },
+    date: '07/12/2023',
+    type: 'missed',
+    count: 3,
+  },
+];
