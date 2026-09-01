@@ -29,7 +29,7 @@ export default function ChatListItem({ item, onPress }: ChatListItemProps) {
       style={({ pressed }) => [styles.row, pressed && styles.pressed]}
     >
       <View>
-        <Avatar avatar={item.avatar} size={54} />
+        <Avatar avatar={item.avatar} size={55} />
         {item.isSyncing && (
           <View style={styles.syncBadge}>
             <Ionicons name="sync" size={12} color={colors.white} />
@@ -70,6 +70,7 @@ export default function ChatListItem({ item, onPress }: ChatListItemProps) {
                 style={styles.pin}
               />
             )}
+
             {!!item.unreadCount && (
               <View style={styles.badge}>
                 <Text style={styles.badgeText}>{item.unreadCount}</Text>

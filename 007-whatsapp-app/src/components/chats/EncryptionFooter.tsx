@@ -1,16 +1,15 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import { Ionicons } from '@expo/vector-icons';
-import { colors } from '@/constants/colors';
-import { spacing } from '@/constants/spacing';
-import { typography } from '@/constants/typography';
+import { colors } from "@/constants/colors";
+import { spacing } from "@/constants/spacing";
+import { typography } from "@/constants/typography";
+import { Ionicons } from "@expo/vector-icons";
+import { StyleSheet, Text, View } from "react-native";
 
 export default function EncryptionFooter() {
   return (
     <View style={styles.wrapper}>
       <Ionicons name="lock-closed" size={13} color={colors.textSecondary} />
       <Text style={styles.text}>
-        Your personal messages are{' '}
+        Your personal messages are{" "}
         <Text style={styles.link}>end-to-end encrypted</Text>
       </Text>
     </View>
@@ -19,9 +18,9 @@ export default function EncryptionFooter() {
 
 const styles = StyleSheet.create({
   wrapper: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
     paddingVertical: spacing.xxl,
     paddingHorizontal: spacing.xxl,
   },
@@ -29,7 +28,7 @@ const styles = StyleSheet.create({
     ...typography.caption,
     color: colors.textSecondary,
     marginLeft: spacing.xs,
-    textAlign: 'center',
+    textAlign: "center",
   },
   link: {
     color: colors.green,

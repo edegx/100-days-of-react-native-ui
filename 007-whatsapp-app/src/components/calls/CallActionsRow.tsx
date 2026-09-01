@@ -7,8 +7,9 @@ import IconButton from "../common/IconButton";
 const actions: { name: string; label: string; font?: string }[] = [
   { name: "phone", label: "Call" },
   { name: "calendar", label: "Schedule" },
+
   { name: "apps-outline", label: "Keypad", font: "Ionicons" },
-  { name: "heart", label: "Favorites" },
+  { name: "heart", label: "Favourites" },
 ];
 
 export default function CallActionsRow() {

@@ -1,9 +1,8 @@
-import React from 'react';
-import { Pressable, StyleSheet, Text, View } from 'react-native';
-import { Ionicons } from '@expo/vector-icons';
-import { colors } from '@/constants/colors';
-import { spacing } from '@/constants/spacing';
-import { typography } from '@/constants/typography';
+import { colors } from "@/constants/colors";
+import { spacing } from "@/constants/spacing";
+import { typography } from "@/constants/typography";
+import { Ionicons } from "@expo/vector-icons";
+import { Pressable, StyleSheet, Text } from "react-native";
 
 interface ArchivedRowProps {
   count: number;
@@ -21,8 +20,8 @@ export default function ArchivedRow({ count }: ArchivedRowProps) {
 
 const styles = StyleSheet.create({
   row: {
-    flexDirection: 'row',
-    alignItems: 'center',
+    flexDirection: "row",
+    alignItems: "center",
     paddingHorizontal: spacing.lg,
     paddingVertical: spacing.md,
   },

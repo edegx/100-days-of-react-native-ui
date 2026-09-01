@@ -1,6 +1,5 @@
-import React from 'react';
-import { StyleSheet, View } from 'react-native';
-import { colors } from '@/constants/colors';
+import { colors } from "@/constants/colors";
+import { StyleSheet, View } from "react-native";
 
 interface SeparatorProps {
   inset?: number;

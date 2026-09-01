@@ -18,7 +18,7 @@ export default function UpdatesScreen() {
           <>
             <SectionLabel label="Status" />
             <MyStatusRow />
-            <SectionLabel label="Recent updates" />
+            <SectionLabel label="Recent Updates" />
           </>
         }
         renderItem={({ item }) => <UpdateListItem item={item} />}

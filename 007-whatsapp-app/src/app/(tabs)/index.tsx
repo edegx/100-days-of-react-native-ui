@@ -1,6 +1,3 @@
-
-
-
 import ArchivedRow from "@/components/chats/ArchivedRow";
 import ChatListItem from "@/components/chats/ChatListItem";
 import EncryptionFooter from "@/components/chats/EncryptionFooter";
@@ -21,9 +18,10 @@ export default function ChatsScreen() {
         rightActions={
           <>
             <IconButton name="camera" backgroundColor="#1c1c1c" />
+
             <IconButton
               name="add"
-              backgroundColor="#FFFFFF"
+              backgroundColor="#ffffff"
               iconColor="#000000"
             />
           </>
