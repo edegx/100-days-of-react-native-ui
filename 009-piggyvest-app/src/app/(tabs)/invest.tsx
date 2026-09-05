@@ -34,7 +34,7 @@ export default function InvestScreen() {
         contentContainerStyle={{ paddingBottom: 40 }}
       >
         <TabHeader
-          iconName="users"
+          iconName="invest"
           iconColor={colors.purpleLight}
           title="My Investments"
           subtitle="Invest money & get returns."

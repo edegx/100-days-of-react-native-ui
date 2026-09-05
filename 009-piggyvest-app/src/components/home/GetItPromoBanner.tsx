@@ -5,12 +5,14 @@ import { Image, Pressable, StyleSheet, Text, View } from "react-native";
 
 export default function GetItPromoBanner() {
   const router = useRouter();
-
+const GETIT_IMAGE =
+    "https://mobile.piggyvest.com/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Fpiggybankservice.appspot.com%2Fv5%2Fget-logo-icon.png&w=48&q=75";
+ 
   return (
     <View style={styles.card}>
       <Image
         style={styles.logo}
-        src="https://mobile.piggyvest.com/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Fpiggybankservice.appspot.com%2Fv5%2Fget-logo-icon.png&w=48&q=75"
+        src={GETIT_IMAGE}
       />
 
       <View style={styles.textBlock}>
