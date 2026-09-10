@@ -1,9 +1,15 @@
 import Badge from "@/components/common/Badge";
 import { colors } from "@/constants/colors";
 import { spacing } from "@/constants/spacing";
-import { Ionicons } from "@expo/vector-icons";
 import { useRouter } from "expo-router";
 import { Pressable, StyleSheet, View } from "react-native";
+import {
+  CameraIcon,
+  ChatIcon,
+  LocationIcon,
+  PeopleIcon,
+  PlayIcon,
+} from "./Icons";
 
 export type NavTab = "map" | "chat" | "camera" | "friends" | "stories";
 
@@ -13,18 +19,39 @@ interface BottomNavigationProps {
 
 interface NavItemConfig {
   key: NavTab;
-  icon: keyof typeof Ionicons.glyphMap;
+  icon: React.ReactNode;
   route: "/" | "/stories";
   badgeCount?: string;
   showDot?: boolean;
 }
 
 const NAV_ITEMS: NavItemConfig[] = [
-  { key: "map", icon: "navigate-circle-outline", route: "/" },
-  { key: "chat", icon: "chatbubble", route: "/", badgeCount: "7" },
-  { key: "camera", icon: "camera-outline", route: "/" },
-  { key: "friends", icon: "people", route: "/stories" },
-  { key: "stories", icon: "play-circle", route: "/" },
+  {
+    key: "map",
+    icon: <LocationIcon size={25} color={colors.textPrimary} />,
+    route: "/",
+  },
+  {
+    key: "chat",
+    icon: <ChatIcon size={25} color={colors.textPrimary} />,
+    route: "/",
+    badgeCount: "7",
+  },
+  {
+    key: "camera",
+    icon: <CameraIcon size={26} color={colors.textPrimary} />,
+    route: "/",
+  },
+  {
+    key: "friends",
+    icon: <PeopleIcon size={25} color={colors.textPrimary} />,
+    route: "/stories",
+  },
+  {
+    key: "stories",
+    icon: <PlayIcon size={25} color={colors.textPrimary} />,
+    route: "/",
+  },
 ];
 
 export default function BottomNavigation({
@@ -45,11 +72,7 @@ export default function BottomNavigation({
             onPress={() => router.push(item.route)}
           >
             <View style={[styles.iconWrapper]}>
-              <Ionicons
-                name={item.icon}
-                size={isCamera ? 26 : 25}
-                color={colors.textPrimary}
-              />
+              {item.icon}
               {item.badgeCount ? (
                 <Badge label={item.badgeCount} style={styles.badgePosition} />
               ) : null}
@@ -84,12 +107,7 @@ const styles = StyleSheet.create({
     width: 40,
     height: 40,
   },
-  cameraWrapper: {
-    width: 46,
-    height: 46,
-    borderRadius: 23,
-    backgroundColor: colors.textPrimary,
-  },
+
   badgePosition: {
     position: "absolute",
     top: -2,
