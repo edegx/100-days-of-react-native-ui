@@ -12,7 +12,7 @@ const AVATAR_URI = "https://avatars.githubusercontent.com/u/66500956?v=4";
 const Header: React.FC = () => {
   return (
     <View style={styles.container}>
-      <Pressable onPress={() => router.push("/pay")} hitSlop={8}>
+      <Pressable onPress={() => router.push("/pay")} hitSlop={6}>
         <Avatar source={{ uri: AVATAR_URI }} />
       </Pressable>
 
@@ -28,6 +28,7 @@ const Header: React.FC = () => {
       <IconButton onPress={() => {}}>
         <BellIcon size={20} color={colors.textPrimary} />
       </IconButton>
+
       <IconButton onPress={() => {}} badgeLabel="HELP">
         <HeadsetIcon size={20} color={colors.textPrimary} />
       </IconButton>

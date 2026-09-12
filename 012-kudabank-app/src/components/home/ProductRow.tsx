@@ -3,7 +3,8 @@ import { radii, spacing } from "@/constants/spacing";
 import { typography } from "@/constants/typography";
 import { ProductRowData } from "@/types";
 import React from "react";
-import { StyleSheet, View } from "react-native";
+import { Pressable, StyleSheet, Text, View } from "react-native";
+import { ChevronRightIcon } from "../icons/Icons";
 
 interface ProductRowProps {
   item: ProductRowData;
@@ -12,7 +13,18 @@ interface ProductRowProps {
 
 const ProductRow: React.FC<ProductRowProps> = ({ item, isLast }) => {
   const { Icon } = item;
-  return <View style={[styles.row, !isLast && styles.divider]}></View>;
+  return (
+    <View style={[styles.row, !isLast && styles.divider]}>
+      <View style={styles.iconWrap}>
+        <Icon size={20} color={colors.textPrimary} />
+      </View>
+      <Text style={styles.title}>{item.title}</Text>
+      <Pressable style={styles.cta}>
+        <Text style={styles.ctaText}>{item.ctaLabel}</Text>
+      </Pressable>
+      <ChevronRightIcon size={20} color={colors.textTertiary} />
+    </View>
+  );
 };
 
 const styles = StyleSheet.create({

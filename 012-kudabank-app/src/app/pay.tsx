@@ -1,11 +1,12 @@
-import React from 'react';
-import { ScrollView, StyleSheet } from 'react-native';
-import Screen from '@/components/common/Screen';
-import PayHeader from '@/components/pay/PayHeader';
-import PaySearchBar from '@/components/pay/PaySearchBar';
-import PayGridSection from '@/components/pay/PayGridSection';
-import BottomNavigation from '@/components/navigation/BottomNavigation';
-import { essentialsData, cardlessPaymentsData, lifestyleData } from '@/data/payData';
+import Screen from "@/components/common/Screen";
+import BottomNavigation from "@/components/navigation/BottomNavigation";
+import PayGridSection from "@/components/pay/PayGridSection";
+import PayHeader from "@/components/pay/PayHeader";
+import PaySearchBar from "@/components/pay/PaySearchBar";
+import { cardlessPaymentsData } from "@/data/cardlessPaymentsData";
+import { essentialsData } from "@/data/essentialsData";
+import { lifestyleData } from "@/data/lifestyleData";
+import { ScrollView, StyleSheet } from "react-native";
 
 export default function Pay() {
   return (

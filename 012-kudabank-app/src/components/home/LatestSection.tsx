@@ -2,13 +2,27 @@ import { colors } from "@/constants/colors";
 import { radii, spacing } from "@/constants/spacing";
 import { typography } from "@/constants/typography";
 import React from "react";
-import { StyleSheet, View } from "react-native";
+import { Image, Pressable, StyleSheet, Text, View } from "react-native";
 
 const PROMO_IMAGE_URI =
   "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=800&q=80";
 
 const LatestSection: React.FC = () => {
-  return <View style={styles.container}></View>;
+  return (
+    <View style={styles.container}>
+      <Text style={styles.title}>The Latest</Text>
+      <Pressable style={styles.card}>
+        <View style={styles.imageWrapper}>
+          <Image source={{ uri: PROMO_IMAGE_URI }} style={styles.image} />
+        </View>
+        <View style={styles.captionWrapper}>
+          <Text style={styles.caption} numberOfLines={2}>
+            Meet the new kuda app, build for more
+          </Text>
+        </View>
+      </Pressable>
+    </View>
+  );
 };
 
 const styles = StyleSheet.create({

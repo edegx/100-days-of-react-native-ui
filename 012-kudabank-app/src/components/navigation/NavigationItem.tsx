@@ -3,7 +3,7 @@ import { colors } from "@/constants/colors";
 import { radii, spacing } from "@/constants/spacing";
 import { typography } from "@/constants/typography";
 import React from "react";
-import { Pressable, StyleSheet } from "react-native";
+import { Pressable, StyleSheet, Text, View } from "react-native";
 
 interface NavigationItemProps {
   label: string;
@@ -18,7 +18,16 @@ const NavigationItem: React.FC<NavigationItemProps> = ({
   active,
   onPress,
 }) => {
-  return <Pressable onPress={onPress} style={styles.wrapper}></Pressable>;
+  return (
+    <Pressable onPress={onPress} style={styles.wrapper}>
+      <View style={[styles.pill, active && styles.pillActive]}>
+        <Icon size={23} color={colors.textPrimary} />
+        <Text style={[styles.label, active && styles.labelActive]}>
+          {label}
+        </Text>
+      </View>
+    </Pressable>
+  );
 };
 
 const styles = StyleSheet.create({

@@ -1,3 +1,4 @@
+import { colors } from "@/constants/colors";
 import { radii, spacing } from "@/constants/spacing";
 import { typography } from "@/constants/typography";
 import { banners } from "@/data/bannerData";
@@ -6,10 +7,14 @@ import {
   Dimensions,
   NativeScrollEvent,
   NativeSyntheticEvent,
+  Pressable,
   ScrollView,
   StyleSheet,
+  Text,
   View,
 } from "react-native";
+import { InfoIcon } from "../icons/Icons";
+import PageDots from "./PageDots";
 
 const { width: SCREEN_WIDTH } = Dimensions.get("window");
 const BANNER_WIDTH = SCREEN_WIDTH - spacing.lg * 2;
@@ -34,9 +39,38 @@ const Banner: React.FC = () => {
         contentContainerStyle={styles.scrollContent}
       >
         {banners.map((banner) => (
-          <></>
+          <Pressable
+            key={banner.id}
+            style={[
+              styles.container,
+              { backgroundColor: banner.backgroundColor },
+            ]}
+          >
+            {banner.icon == "info" ? (
+              <>
+                <InfoIcon size={22} color={colors.yellowBannerText} />
+              </>
+            ) : null}
+            <View style={styles.textWrap}>
+              <Text style={[styles.title, { color: banner.textColor }]}>
+                {banner.title}
+              </Text>
+              <Text
+                style={[
+                  styles.body,
+                  {
+                    color: banner.textColor,
+                  },
+                ]}
+              >
+                {banner.body}
+              </Text>
+            </View>
+          </Pressable>
         ))}
       </ScrollView>
+
+      <PageDots count={banners.length} activeIndex={activeIndex} />
     </View>
   );
 };

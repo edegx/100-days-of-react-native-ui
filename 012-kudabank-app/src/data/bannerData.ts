@@ -9,4 +9,12 @@ export const banners: Banner[] = [
     backgroundColor: colors.yellowBanner,
     textColor: colors.yellowBannerText,
   },
+  {
+    id: "limit",
+    icon: "rocket",
+    title: "Upgrade To Tier 2",
+    body: "Please add your NIN details to increase your transaction limit",
+    backgroundColor: colors.greenBanner,
+    textColor: colors.yellowBannerText,
+  },
 ];

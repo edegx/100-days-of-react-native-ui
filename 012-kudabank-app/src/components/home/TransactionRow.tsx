@@ -3,7 +3,8 @@ import { spacing } from "@/constants/spacing";
 import { typography } from "@/constants/typography";
 import { TransactionItemData } from "@/types";
 import React from "react";
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
+import Avatar from "../common/Avatar";
 
 interface TransactionRowProps {
   item: TransactionItemData;
@@ -24,7 +25,31 @@ const TransactionRow: React.FC<TransactionRowProps> = ({
   showAmount,
 }) => {
   const isCredit = item.direction === "credit";
-  return <View style={[styles.row, !isLast && styles.divider]}></View>;
+  return (
+    <View style={[styles.row, !isLast && styles.divider]}>
+      <View style={[styles.avatar]}>
+        <Avatar showBadge={false} source={{ uri: item.avatar }} />
+      </View>
+
+      <View style={styles.details}>
+        <Text style={styles.name} numberOfLines={1}>
+          {item.name}
+        </Text>
+        <Text style={styles.date}>{item.date}</Text>
+      </View>
+
+      {showAmount && (
+        <Text
+          style={[
+            styles.amount,
+            isCredit ? styles.amountCredit : styles.amountDebit,
+          ]}
+        >
+          {isCredit ? "+" : ""}₦{formatAmount(item.amount)}
+        </Text>
+      )}
+    </View>
+  );
 };
 
 const styles = StyleSheet.create({

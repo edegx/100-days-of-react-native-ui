@@ -2,10 +2,32 @@ import { colors } from "@/constants/colors";
 import { radii, spacing } from "@/constants/spacing";
 import { typography } from "@/constants/typography";
 import React from "react";
-import { StyleSheet, View } from "react-native";
+import { Image, Pressable, StyleSheet, Text, View } from "react-native";
 
 const CardsPromoSection: React.FC = () => {
-  return <View style={styles.container}></View>;
+  return (
+    <View style={styles.container}>
+      <Text style={styles.title}>Cards</Text>
+      <View style={styles.card}>
+        <Image
+          style={{
+            width: 56,
+            height: 92,
+          }}
+          source={require("../../../assets/images/cards.png")}
+        />
+        <View style={styles.textWrap}>
+          <Text style={styles.cardTitle}>Get a Kuda Card</Text>
+          <Text style={styles.cardBody}>
+            Shop in-store with your physical or online with your virtual card.
+          </Text>
+          <Pressable hitSlop={6}>
+            <Text style={styles.cta}>Get Card</Text>
+          </Pressable>
+        </View>
+      </View>
+    </View>
+  );
 };
 
 const styles = StyleSheet.create({

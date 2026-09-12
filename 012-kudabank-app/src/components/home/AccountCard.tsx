@@ -3,7 +3,7 @@ import { spacing } from "@/constants/spacing";
 import { typography } from "@/constants/typography";
 import React from "react";
 import { Pressable, StyleSheet, Text, View } from "react-native";
-import { BankIcon, CopyIcon } from "../icons/Icons";
+import { BankIcon, CopyIcon, DotsVerticalIcon } from "../icons/Icons";
 
 interface AccountCardProps {
   currencyLabel: string;
@@ -35,7 +35,7 @@ const AccountCard: React.FC<AccountCardProps> = ({
       <View style={styles.accountRow}>
         <BankIcon size={16} color={colors.textSecondary} />
         <Text style={styles.accountText}>
-          {currencyLabel} · {accountNumber}
+          {currencyLabel}· {accountNumber}
         </Text>
         <CopyIcon size={16} color={colors.purple} />
       </View>
@@ -51,12 +51,17 @@ const AccountCard: React.FC<AccountCardProps> = ({
             <View style={styles.maskedRow}>
               <Text style={styles.balanceText}>₦</Text>
               {[0, 1, 2, 3, 4].map((i) => (
-                <View key={i} style={styles.maskPill} />
+                <View style={styles.maskPill} key={i} />
               ))}
             </View>
           )}
+
+          <Pressable onPress={() => {}} style={styles.dotsButton} hitSlop={10}>
+            <DotsVerticalIcon size={18} color={colors.textPrimary} />
+          </Pressable>
         </View>
       </Pressable>
+      <Text style={styles.updatedText}>{lastUpdatedLabel}</Text>
     </View>
   );
 };

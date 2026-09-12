@@ -2,8 +2,9 @@ import { colors } from "@/constants/colors";
 import { radii, spacing } from "@/constants/spacing";
 import { typography } from "@/constants/typography";
 import { GridActionItem } from "@/types";
+import { router } from "expo-router";
 import React from "react";
-import { StyleSheet } from "react-native";
+import { Pressable, StyleSheet, Text } from "react-native";
 
 interface QuickAccessItemProps {
   item: GridActionItem;
@@ -11,7 +12,15 @@ interface QuickAccessItemProps {
 
 const QuickAccessItem: React.FC<QuickAccessItemProps> = ({ item }) => {
   const { Icon, label, route } = item;
-  return <></>;
+  return (
+    <Pressable
+      style={({ pressed }) => [styles.card, pressed && styles.pressed]}
+      onPress={() => route && router.push(route as any)}
+    >
+      <Icon size={24} color={colors.textPrimary} />
+      <Text style={styles.label}>{label}</Text>
+    </Pressable>
+  );
 };
 
 const styles = StyleSheet.create({
