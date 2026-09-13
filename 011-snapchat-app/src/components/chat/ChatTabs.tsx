@@ -1,9 +1,9 @@
-import Badge from "@/components/common/Badge";
 import { colors } from "@/constants/colors";
 import { spacing } from "@/constants/spacing";
 import { typography } from "@/constants/typography";
 import React from "react";
 import { Image, Pressable, ScrollView, StyleSheet, Text } from "react-native";
+import Badge from "../common/Badge";
 
 interface TabConfig {
   id: string;
@@ -36,11 +36,12 @@ export default function ChatTabs() {
     >
       {TABS.map((tab) => {
         const isSelected = tab.id === selected;
+
         return (
           <Pressable
             key={tab.id}
-            style={styles.tab}
             onPress={() => setSelected(tab.id)}
+            style={styles.tab}
           >
             {tab.avatarUri ? (
               <Image source={{ uri: tab.avatarUri }} style={styles.avatar} />

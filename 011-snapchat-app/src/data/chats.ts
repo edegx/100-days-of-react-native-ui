@@ -111,15 +111,4 @@ export const chats: ChatItem[] = [
     isBold: false,
     trailingIcon: "camera",
   },
-  {
-    id: "11",
-    name: "delight_013",
-    avatarUri: "https://placehold.co/100x100/6b4a5b/ffffff.png?text=D",
-    hasStoryRing: true,
-    storyRingColor: "#B24BF3",
-    statusIcon: "none",
-    statusText: "Friendship Flashback",
-    isBold: false,
-    trailingIcon: "camera",
-  },
 ];

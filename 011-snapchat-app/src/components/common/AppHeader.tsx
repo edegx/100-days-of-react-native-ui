@@ -18,7 +18,6 @@ export default function AppHeader({
 }: AppHeaderProps) {
   return (
     <View style={styles.container}>
-      {/* Left Section: Avatar + Search */}
       <View style={styles.leftSection}>
         <Pressable style={styles.avatarWrapper}>
           <Image source={{ uri: avatarUri }} style={styles.avatar} />
@@ -27,7 +26,6 @@ export default function AppHeader({
             <Ionicons name="star" size={9} color={colors.background} />
           </View>
         </Pressable>
-
         <IconButton
           name="search"
           containerSize={40}
@@ -36,10 +34,8 @@ export default function AppHeader({
         />
       </View>
 
-      {/* Center Section: Title */}
       <Text style={[typography.screenTitle, styles.title]}>{title}</Text>
 
-      {/* Right Section: Notifications + Person Add + Ellipsis */}
       <View style={styles.rightSection}>
         <IconButton
           name="notifications"
@@ -52,7 +48,7 @@ export default function AppHeader({
         <IconButton
           name="person-add"
           containerSize={40}
-          size={18}
+          size={19}
           backgroundColor={colors.yellow}
           color={colors.background}
           onPress={() => {}}
@@ -61,7 +57,7 @@ export default function AppHeader({
         <IconButton
           name="ellipsis-horizontal"
           containerSize={40}
-          size={20}
+          size={19}
           onPress={() => {}}
         />
       </View>

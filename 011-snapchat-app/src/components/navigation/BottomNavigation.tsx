@@ -1,8 +1,8 @@
-import Badge from "@/components/common/Badge";
 import { colors } from "@/constants/colors";
 import { spacing } from "@/constants/spacing";
 import { useRouter } from "expo-router";
 import { Pressable, StyleSheet, View } from "react-native";
+import Badge from "../common/Badge";
 import {
   CameraIcon,
   ChatIcon,
@@ -39,7 +39,7 @@ const NAV_ITEMS: NavItemConfig[] = [
   },
   {
     key: "camera",
-    icon: <CameraIcon size={26} color={colors.textPrimary} />,
+    icon: <CameraIcon size={25} color={colors.textPrimary} />,
     route: "/",
   },
   {
@@ -87,6 +87,10 @@ export default function BottomNavigation({
 
 const styles = StyleSheet.create({
   container: {
+    position: "absolute",
+    left: 0,
+    right: 0,
+    bottom: 0,
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-around",
