@@ -31,8 +31,8 @@ const styles = StyleSheet.create({
     marginBottom: spacing.sm,
   },
   subtitle: {
-    fontSize: 14,
     fontWeight: "600",
+    fontSize: 14,
     color: colors.textMuted,
     textAlign: "center",
     lineHeight: 20,
