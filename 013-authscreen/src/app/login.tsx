@@ -45,13 +45,13 @@ export default function LoginScreen() {
             icon="lock-closed-outline"
             placeholder="Password"
             isPassword
+            autoCapitalize="none"
             value={password}
             onChangeText={setPassword}
           />
         </View>
 
-        <Text style={styles.forgotPassword}>Forgot Password?</Text>
-
+        <Text style={styles.forgotPassword}>Forgot password?</Text>
         <PrimaryButton
           label="Login"
           onPress={handleLogin}
@@ -60,7 +60,6 @@ export default function LoginScreen() {
         />
 
         <DividerLabel label="or" />
-
         <SocialButtonGroup isLogin={true} onSelect={handleSocial} />
       </View>
     </Screen>

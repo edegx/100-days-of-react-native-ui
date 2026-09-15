@@ -3,6 +3,7 @@ import Screen from "@/components/common/Screen";
 import OnboardingCopy from "@/components/onboarding/OnboardingCopy";
 import ProgressBar from "@/components/onboarding/ProgressBar";
 import { spacing } from "@/constants/spacing";
+import { SLIDES } from "@/data/slide";
 import { SocialProvider } from "@/types/auth";
 import { router } from "expo-router";
 import { useEffect, useRef, useState } from "react";
@@ -17,30 +18,6 @@ import {
 } from "react-native";
 
 const { width: SCREEN_WIDTH } = Dimensions.get("window");
-
-// Swap these for your real asset imports, e.g. require("@/assets/image1.png")
-const image1 = require("@/assets/images/image2.png");
-const image2 = require("@/assets/images/image1.png");
-const image3 = require("@/assets/images/image3.png");
-
-const SLIDES = [
-  {
-    image: image1,
-    title: "Private Coaching",
-    subtitle: "Add one-on-one, confidential sessions for only\n$35 per session",
-  },
-  {
-    image: image2,
-    title: "Track Your Progress",
-    subtitle:
-      "See your growth over time with personal\ninsights and milestones",
-  },
-  {
-    image: image3,
-    title: "Get Started",
-    subtitle: "Create your account and begin your\njourney today",
-  },
-];
 
 const AUTO_ADVANCE_MS = 4000;
 
@@ -94,8 +71,8 @@ export default function WelcomeScreen() {
         }}
         style={styles.pager}
       >
-        {SLIDES.map((slide, i) => (
-          <View key={i} style={[styles.slide, { width: SCREEN_WIDTH }]}>
+        {SLIDES.map((slide, index) => (
+          <View key={index} style={[styles.slide, { width: SCREEN_WIDTH }]}>
             <Image
               source={slide.image}
               style={styles.image}
@@ -105,7 +82,6 @@ export default function WelcomeScreen() {
           </View>
         ))}
       </ScrollView>
-
       <View style={{ marginHorizontal: 48, marginTop: spacing.lg }}>
         <ProgressBar totalSteps={SLIDES.length} currentStep={currentStep + 1} />
       </View>

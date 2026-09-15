@@ -1,15 +1,10 @@
 import SocialButton from "@/components/common/SocialButton";
 import { spacing } from "@/constants/spacing";
+import { socialMediaButton } from "@/data/socialButtons";
 import { SocialButtonConfig, SocialProvider } from "@/types/auth";
 import { router } from "expo-router";
 import { StyleSheet, View } from "react-native";
 import AuthFooterLink from "./AuthFooterLink";
-
-const DEFAULT_BUTTONS: SocialButtonConfig[] = [
-  { provider: "google", label: "Continue with Google" },
-  { provider: "apple", label: "Continue with Apple" },
-  { provider: "guest", label: "Continue As Guest" },
-];
 
 interface SocialButtonGroupProps {
   isLogin: boolean;
@@ -19,7 +14,7 @@ interface SocialButtonGroupProps {
 
 export default function SocialButtonGroup({
   isLogin,
-  buttons = DEFAULT_BUTTONS,
+  buttons = socialMediaButton,
   onSelect,
 }: SocialButtonGroupProps) {
   return (
@@ -32,16 +27,15 @@ export default function SocialButtonGroup({
           onPress={() => onSelect?.(button.provider)}
         />
       ))}
-
       {isLogin ? (
         <AuthFooterLink
-          prompt="Need an account?"
+          prompt="Need an account"
           actionLabel="Sign up"
           onPress={() => router.push("/signup")}
         />
       ) : (
         <AuthFooterLink
-          prompt="Already have an account?"
+          prompt="Already have an account"
           actionLabel="Log in"
           onPress={() => router.push("/login")}
         />

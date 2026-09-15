@@ -33,7 +33,7 @@ export default function SignupScreen() {
   return (
     <Screen style={styles.screen}>
       <View style={styles.body}>
-        <AuthHeader title="Sign up" />
+        <AuthHeader title="Sign Up" />
 
         <View style={styles.form}>
           <AuthTextInput
@@ -54,7 +54,7 @@ export default function SignupScreen() {
           <AuthTextInput
             icon="lock-closed-outline"
             placeholder="Password"
-            isPassword
+            isPassword={true}
             value={password}
             onChangeText={setPassword}
           />
@@ -68,7 +68,6 @@ export default function SignupScreen() {
         />
 
         <DividerLabel label="or" />
-
         <SocialButtonGroup isLogin={false} onSelect={handleSocial} />
       </View>
     </Screen>
